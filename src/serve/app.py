@@ -2,6 +2,8 @@ import argparse
 from threading import Thread
 import gradio as gr
 from PIL import Image
+import sys
+sys.path.append("./")
 from src.utils import load_pretrained_model, get_model_name_from_path, disable_torch_init
 from transformers import TextIteratorStreamer
 from functools import partial
@@ -129,7 +131,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-path", type=str, default=None)
+    parser.add_argument("--model-path", type=str, default="checkpoints/3b/libero/checkpoint-1320")
     parser.add_argument("--model-base", type=str, default="Qwen/Qwen2-VL-7B-Instruct")
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--load-8bit", action="store_true")
@@ -137,7 +139,7 @@ if __name__ == "__main__":
     parser.add_argument("--disable_flash_attention", action="store_true")
     parser.add_argument("--temperature", type=float, default=0)
     parser.add_argument("--repetition-penalty", type=float, default=1.0)
-    parser.add_argument("--max-new-tokens", type=int, default=1024)
+    parser.add_argument("--max-new-tokens", type=int, default=5120)
     parser.add_argument("--debug", action="store_true")
     args = parser.parse_args()
     main(args)

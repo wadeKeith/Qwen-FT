@@ -67,6 +67,7 @@ deepspeed src/training/train.py \
     --tf32 True \
     --gradient_checkpointing True \
     --report_to wandb \
+    --run_name $WANDB_NAME \
     --lazy_preprocess True \
     --save_strategy "epoch" \
     --save_total_limit 10 \
