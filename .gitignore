@@ -1,0 +1,7 @@
+Qwen/Qwen2.5-VL-3B-Instruct
+__pycache__
+.DS_Store
+nohup.out
+output
+wandb
+*.log
