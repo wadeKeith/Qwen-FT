@@ -1,7 +1,7 @@
-Qwen/Qwen2.5-VL-3B-Instruct
+Qwen/*
 __pycache__
 .DS_Store
 nohup.out
-output
+checkpoints
 wandb
 *.log
