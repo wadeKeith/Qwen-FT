@@ -226,5 +226,5 @@ def train():
 
 if __name__ == "__main__":
     # os.environ["HF_ENDPOINT"]="https://hf-mirror.com"
-    os.environ["WANDB_MODE"] = 'offline'
+    # os.environ["WANDB_MODE"] = 'offline'
     train()
