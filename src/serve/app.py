@@ -137,7 +137,7 @@ if __name__ == "__main__":
     parser.add_argument("--load-8bit", action="store_true")
     parser.add_argument("--load-4bit", action="store_true")
     parser.add_argument("--disable_flash_attention", action="store_true")
-    parser.add_argument("--temperature", type=float, default=0)
+    parser.add_argument("--temperature", type=float, default=0.3)
     parser.add_argument("--repetition-penalty", type=float, default=1.0)
     parser.add_argument("--max-new-tokens", type=int, default=5120)
     parser.add_argument("--debug", action="store_true")
