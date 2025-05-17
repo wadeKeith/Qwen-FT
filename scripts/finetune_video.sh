@@ -14,7 +14,7 @@ NUM_DEVICES=8
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
 # If your dataset is mixed with images and videos, you need to use zero2.
-deepspeed src/training/train.py \
+deepspeed src/train/train_sft.py \
     --use_liger True \
     --deepspeed scripts/zero3_offload.json \
     --model_id $MODEL_NAME \
@@ -23,7 +23,7 @@ deepspeed src/training/train.py \
     --remove_unused_columns False \
     --freeze_vision_tower False \
     --freeze_llm False \
-    --tune_merger True \
+    --freeze_merger False \
     --bf16 True \
     --fp16 False \
     --disable_flash_attn2 False \

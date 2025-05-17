@@ -5,3 +5,4 @@ nohup.out
 checkpoints
 wandb
 *.log
+data/datasets

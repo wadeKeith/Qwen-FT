@@ -1,6 +1,2 @@
-torch==2.6.0 
-torchvision 
-torchaudio 
-triton==3.2.0
-bitsandbytes==0.45.3
-transformers @ git+https://github.com/huggingface/transformers.git@9d2056f12b66e64978f78a2dcb023f65b2be2108
+qwen-vl-utils
+# flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
