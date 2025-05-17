@@ -12,9 +12,9 @@ fi
 # MODEL_NAME="Qwen/Qwen2.5-VL-3B-Instruct"
 MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 
-GLOBAL_BATCH_SIZE=128
-BATCH_PER_DEVICE=4
-NUM_DEVICES=4
+GLOBAL_BATCH_SIZE=256
+BATCH_PER_DEVICE=32
+NUM_DEVICES=8
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
 export OUTPUT_DIR="./checkpoints/7b/libero_cot"
@@ -30,9 +30,9 @@ else
 fi
 
 export WANDB_PROJECT="qwen-2.5-vl"
-export WANDB_MODE="offline"
+export WANDB_MODE="online"
 export WANDB_NAME="7b-libero-cot"
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
 deepspeed src/train/train_sft.py \
     --use_liger True \
@@ -49,7 +49,7 @@ deepspeed src/train/train_sft.py \
     --disable_flash_attn2 False \
     --output_dir $OUTPUT_DIR \
     --run_name $WANDB_NAME \
-    --num_train_epochs 10 \
+    --num_train_epochs 20 \
     --per_device_train_batch_size $BATCH_PER_DEVICE \
     --gradient_accumulation_steps $GRAD_ACCUM_STEPS \
     --image_min_pixels $((4 * 28 * 28)) \

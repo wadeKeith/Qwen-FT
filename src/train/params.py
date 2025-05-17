@@ -31,7 +31,7 @@ class TrainingArguments(HFTrainingArguments):
     auto_find_batch_size: bool = field(default=False)
     """Whether to automatically find the batch size."""
 
-    max_steps: int = field(default=3)
+    # max_steps: int = field(default=3)
     """Total number of training steps to perform. If > 0, overrides num_train_epochs."""
 
     num_train_epochs: int = field(default=1)
@@ -72,7 +72,7 @@ class TrainingArguments(HFTrainingArguments):
     save_strategy: str = field(default="steps")
     """The checkpoint save strategy to use."""
 
-    save_steps: float = field(default=2)
+    # save_steps: float = field(default=2)
     """Number of updates steps before two checkpoint saves. If save_strategy is 'epoch', this is the number of epochs."""
 
     resume: bool = field(default=False)

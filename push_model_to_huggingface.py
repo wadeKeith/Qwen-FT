@@ -4,12 +4,12 @@ from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor, Auto
 import torch
 
 
-model_path = "checkpoints/7b/libero_cot/checkpoint-30000"
+model_path = "checkpoints/7b/libero_cot/checkpoint-460"
 
 # push base model to hub
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
         model_path,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=torch.float16,
         attn_implementation="flash_attention_2",
     )
 

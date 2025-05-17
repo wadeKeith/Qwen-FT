@@ -127,11 +127,11 @@ def main(args):
 
 
     demo.queue(api_open=False)
-    demo.launch(show_api=False, share=False, server_name='0.0.0.0')
+    demo.launch(show_api=False, share=False, server_name='127.0.0.1')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-path", type=str, default="checkpoints/3b/libero/checkpoint-1320")
+    parser.add_argument("--model-path", type=str, default="checkpoints/7b/libero_cot/checkpoint-460")
     parser.add_argument("--model-base", type=str, default="Qwen/Qwen2-VL-7B-Instruct")
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--load-8bit", action="store_true")
@@ -140,6 +140,6 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=float, default=0.3)
     parser.add_argument("--repetition-penalty", type=float, default=1.0)
     parser.add_argument("--max-new-tokens", type=int, default=5120)
-    parser.add_argument("--debug", action="store_true")
+    parser.add_argument("--debug", action="store_true", default=True)
     args = parser.parse_args()
     main(args)
